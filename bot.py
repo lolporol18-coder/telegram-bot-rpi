@@ -1,15 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
-
-# Замени 'YOUR_TOKEN_HERE' на токен от @BotFather
-
 import os
-TOKEN = os.getenv("TELEGRAM_TOKEN")
+
+TOKEN = os.getenv("TOKEN")
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Привет! Я твой бот на Raspberry Pi 😊")
+    await update.message.reply_text("Привет! Я бот для учёта продаж.")
 
 def main():
     application = Application.builder().token(TOKEN).build()
